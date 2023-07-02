@@ -30,6 +30,9 @@ namespace HashTableAndBinarySearchTree.BinarySearchTree
 
             Console.WriteLine("Binary Tree:");
             binaryTree.DisplayTree();
+
+            int searchValue = 63;
+            Console.WriteLine("Searching for value " + searchValue + ": " + binaryTree.Search(searchValue));
         }
     }
     public class BinaryTree
@@ -115,6 +118,32 @@ namespace HashTableAndBinarySearchTree.BinarySearchTree
             Console.WriteLine(new string(' ', level * 4) + current.Data);
 
             DisplayTreeRecursive(current.Left, level + 1);
+        }
+        public bool Search(int value)
+        {
+            return SearchRecursive(root, value);
+        }
+
+        private bool SearchRecursive(Node current, int value)
+        {
+            if (current == null)
+            {
+                return false;
+            }
+
+            if (current.Data == value)
+            {
+                return true;
+            }
+
+            if (value < current.Data)
+            {
+                return SearchRecursive(current.Left, value);
+            }
+            else
+            {
+                return SearchRecursive(current.Right, value);
+            }
         }
     }
 }
