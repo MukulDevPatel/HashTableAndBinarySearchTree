@@ -11,7 +11,7 @@ namespace HashTableAndBinarySearchTree
             while (flag)
             {
                 Console.WriteLine("Select an option from below in the list");
-                Console.WriteLine("1. Find frequency of Words\n2. Find Frequency Form large Paragraph\n3. Exit");
+                Console.WriteLine("1. Find frequency of Words\n2. Find Frequency Form large Paragraph\n3. Remove Avoidable Word\n4. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -22,6 +22,9 @@ namespace HashTableAndBinarySearchTree
                         FindWordFrequencyInLargeParagraph.CountWordsFromTheSentence();
                         break;
                     case 3:
+                        RemoveAvoidableWord.AvoidableWord();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
