@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HashTableAndBinarySearchTree.HashTableProblems
+namespace HashTableAndBinarySearchTree
 {
-    class MyMapNode<K, V>
+    public class MyMapNode<K, V>
     {
         public K Key { get; set; }
         public V Value { get; set; }
@@ -19,7 +19,7 @@ namespace HashTableAndBinarySearchTree.HashTableProblems
     }
 
     // Hash map class implemented using a linked list
-    class MyHashMap<K, V>
+    public class MyHashMap<K, V>
     {
         private LinkedList<MyMapNode<K, V>>[] map;
         private int size;
@@ -106,12 +106,11 @@ namespace HashTableAndBinarySearchTree.HashTableProblems
         }
     }
 
-    public class HashProgram
+    public class FindFrequencyOfWord
     {
         public static void FindFrequency()
         {
-            /*string sentence = "To be or not to be";*/
-            string sentence = "My name is mukul and my work is coding";
+            string sentence = "To be or not to be";
             string[] words = sentence.Split(' ');
 
             MyHashMap<string, int> hashMap = new MyHashMap<string, int>(10);
